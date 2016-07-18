@@ -10,7 +10,11 @@ func Sqrt(x float64) float64 {
 	
 	z := float64(x/2)
 	tmp := float64(x)
-	// z := 1.0
+
+	//음수 일 때 처리
+	if x < 0 {
+		return x;
+	}
 	
 	for (tmp - z > threshold) {
 		tmp = z
