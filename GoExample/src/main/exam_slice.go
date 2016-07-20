@@ -52,4 +52,36 @@ func print_slice(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",s, len(x), cap(x), x)	
 }
 
+func isEmptySlice_int(x []int) bool {
+	
+	//fmt.Println(x, len(z), cap(z))
+	if len(x) == 0 || x == nil {
+		return true
+	} else {
+		return false
+	}
+}
+
+func iterates_slice1(x []int) {
+	
+	//i에는 index가 v에는 value가 들어옴
+	// index, value := range slice
+	for i, v := range x {
+		fmt.Printf("x[%d] = %d\n",i,v)
+	}
+}
+
+func iterates_slice2() {
+	pow := make([]int, 10)
+	
+	for i := range pow {
+		pow[i] = 1 << uint(i)
+	}
+	
+	// _을 이용하여 INDEX값 무시	
+	for _, value := range pow {
+		fmt.Printf("%d\n", value)
+	}
+}
+
 

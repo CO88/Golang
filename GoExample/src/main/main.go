@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"golang.org/x/tour/pic"
 )
 
 var x, y, z int
@@ -47,4 +48,16 @@ func main(){
 	print_slice("c", c)
 	d := c[2:5]
 	print_slice("d", d)
+	
+	//2016-07-19
+	fmt.Println("Is this slice (a) empty?? :",isEmptySlice_int(a))
+	fmt.Println("Is this slice (b) empty?? :",isEmptySlice_int(b))
+	fmt.Println("Is this slice (c) empty?? :",isEmptySlice_int(c))
+	fmt.Println("Is this slice (d) empty?? :",isEmptySlice_int(d))
+	
+	//2016-07-20
+	iterates_slice1(a)
+	iterates_slice2()
+	
+	pic.Show(Pic)
 }
