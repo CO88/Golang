@@ -60,4 +60,9 @@ func main(){
 	iterates_slice2()
 	
 	pic.Show(Pic)
+	
+	//2016-07-22
+	var location_map = createMap()
+	fmt.Println(location_map)
+	
 }
