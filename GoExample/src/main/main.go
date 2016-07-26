@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"golang.org/x/tour/pic"
+	"golang.org/x/tour/wc"
 )
 
 var x, y, z int
@@ -65,4 +66,12 @@ func main(){
 	var location_map = createMap()
 	fmt.Println(location_map)
 	
+	//2016-07-25
+	literals_Test()
+	mutating_map()
+	
+	functionValue()
+	
+	//2016-07-26
+	wc.Test(WordCount)
 }
