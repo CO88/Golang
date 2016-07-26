@@ -13,6 +13,7 @@ func hanoi(n int, a string, b string, c string) string {
 } 
 
 func fibonacci() func() int {
+	
 	var sum int = 0
 	var a1 int = 0
 	var a2 int = 1

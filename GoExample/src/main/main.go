@@ -92,4 +92,5 @@ func main(){
 	//아래 2가지의 출력문은 값이 동일함
 	fmt.Println(fibonacci())
 	fmt.Println(f)
+	
 }
