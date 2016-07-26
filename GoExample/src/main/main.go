@@ -74,4 +74,23 @@ func main(){
 	
 	//2016-07-26
 	wc.Test(WordCount)
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
+	
+	//A Tour of GO #44
+	//연습 : 피보나치 클로져
+	f := fibonacci();
+	for i := 0; i < 10; i++ {
+		fmt.Println(f())
+	}
+	//함수의 주소값이 출력됨
+	//아래 2가지의 출력문은 값이 동일함
+	fmt.Println(fibonacci())
+	fmt.Println(f)
+	
 }
