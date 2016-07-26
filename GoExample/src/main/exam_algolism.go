@@ -24,3 +24,4 @@ func fibonacci() func() int {
 		return sum
 	}
 }
+
