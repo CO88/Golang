@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/cmplx" 
 	"golang.org/x/tour/pic"
 	"golang.org/x/tour/wc"
 )
@@ -93,4 +94,16 @@ func main(){
 	fmt.Println(fibonacci())
 	fmt.Println(f)
 	
+	//2016-07-27
+	switchExample01()
+	switchExample02()
+	switchExample03()
+	
+	fmt.Println(Cbrt(2+2i))
+	fmt.Println(cmplx.Pow(2+2i, 1/3.0))
+	
+	fmt.Println(Cbrt(8))
+	fmt.Println(cmplx.Pow(8, 1/3.0))
+
+
 }

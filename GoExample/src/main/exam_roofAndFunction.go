@@ -6,7 +6,7 @@ import (
 
 func Sqrt(x float64) float64 {
 	
-	const threshold = 0.0000000000000001
+	const threshold = 1e-15
 	
 	z := float64(x/2)
 	tmp := float64(x)
