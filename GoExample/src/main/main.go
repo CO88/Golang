@@ -104,6 +104,23 @@ func main(){
 	
 	fmt.Println(Cbrt(8))
 	fmt.Println(cmplx.Pow(8, 1/3.0))
+	
+	//2017-07-29 (#50 ~
+	var ai Abser
+	v3 := &Vertex3D{3,4,5}
+	myf := MyFloat(-math.Sqrt2)
+	
+	v3.scale(3)
+	fmt.Println(v3.X,",",v3.Y,",",v3.Z)
+	
+	ai = myf // a MyFloat implements Abser
+	
+	// a Vertex3D, does NOT implements Abser
+	//ai = &v3 
+	
+	fmt.Println(ai.Abs())
+	
+
 
 
 }
