@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func Sqrt(x float64) float64 {
+func Sqrt_old(x float64) float64 {
 	
 	const threshold = 1e-15
 	

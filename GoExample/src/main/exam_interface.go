@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	//"fmt"
 )
 
 type Reader interface {
@@ -12,5 +11,12 @@ type Reader interface {
 type Writer interface {
 	Write(b []byte) (n int, err error)
 }
+
+type ReadWriter interface {
+	Reader
+	Writer
+}
+
+
 
 

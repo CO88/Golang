@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"fmt"
 	"math"
 	"math/cmplx" 
@@ -22,11 +23,11 @@ func main(){
 	//shortInit()
 	
 	//2016-06-21
-	fmt.Println(sqrt(2), sqrt(-4))
+	fmt.Println(sqrt(2), sqrt(4))
 	fmt.Println(pow(3, 2, 10), pow(3, 3, 20))
 	
 	//2016-07-12
-	fmt.Println("Newton's method : ",  Sqrt(-25))
+	//fmt.Println("Newton's method : ",  Sqrt(-25))
 	fmt.Println("math.Sqrt method : ", math.Sqrt(25))
 	
 	//2016-07-18
@@ -105,7 +106,7 @@ func main(){
 	fmt.Println(Cbrt(8))
 	fmt.Println(cmplx.Pow(8, 1/3.0))
 	
-	//2017-07-29 (#50 ~
+	//2016-07-29 (#50 ~ #53)
 	var ai Abser
 	v3 := &Vertex3D{3,4,5}
 	myf := MyFloat(-math.Sqrt2)
@@ -120,7 +121,23 @@ func main(){
 	
 	fmt.Println(ai.Abs())
 	
-
+	/*
+			2016-08-01		
+	*/
+	var w Writer
+	
+	// os.Stdout implements Writer
+	w = os.Stdout
+	
+	fmt.Fprintf(w, "hello, writer\n")
+	
+	if err := run(); err != nil {
+		fmt.Println(err)
+	}
+	sqrt_param := float64(-2)
+	sqrt_value,sqrt_err := Sqrt(sqrt_param)
+	fmt.Println("Sqrt(",sqrt_param,") : ",sqrt_value)
+	fmt.Println("Sqrt(",sqrt_param,") err : ",sqrt_err)
 
 
 }
