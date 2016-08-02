@@ -1,12 +1,15 @@
 package main
 
 import (
+	"io"
 	"os"
 	"fmt"
 	"math"
 	"math/cmplx" 
 	"golang.org/x/tour/pic"
 	"golang.org/x/tour/wc"
+	"net/http"
+	"strings"
 )
 
 var x, y, z int
@@ -138,6 +141,27 @@ func main(){
 	sqrt_value,sqrt_err := Sqrt(sqrt_param)
 	fmt.Println("Sqrt(",sqrt_param,") : ",sqrt_value)
 	fmt.Println("Sqrt(",sqrt_param,") err : ",sqrt_err)
-
+	
+	/*
+			2016-08-02
+	*/
+	//#57
+	var h Hello
+	http.ListenAndServe("localhost:4000", h)
+	
+	//#58
+	//http.Handle("/string", String("I'm a frayed knot."))
+	//http.Handle("/struct", &Struct{"Hello", ":", "Gophers!"})
+	//http.ListenAndServe("localhost:4001", nil)
+	
+	//#60
+	m := Image{150,30}
+	pic.ShowImage(&m)
+	
+	//#61
+	s := strings.NewReader(
+		"Lbh penpxrq gur pbqr!")
+	r := rot13Reader{s}
+	io.Copy(os.Stdout, &r)
 
 }
