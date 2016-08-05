@@ -8,7 +8,7 @@ import (
 	"math/cmplx" 
 	"golang.org/x/tour/pic"
 	"golang.org/x/tour/wc"
-	"net/http"
+	//"net/http"
 	"strings"
 )
 
@@ -146,8 +146,8 @@ func main(){
 			2016-08-02
 	*/
 	//#57
-	var h Hello
-	http.ListenAndServe("localhost:4000", h)
+	//var h Hello
+	//http.ListenAndServe("localhost:4000", h)
 	
 	//#58
 	//http.Handle("/string", String("I'm a frayed knot."))
@@ -163,5 +163,12 @@ func main(){
 		"Lbh penpxrq gur pbqr!")
 	r := rot13Reader{s}
 	io.Copy(os.Stdout, &r)
+	
+	/*
+			2016-08-05
+	*/
+	//#63
+	go say("world")
+	say("Hello")
 
 }
