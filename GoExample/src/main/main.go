@@ -125,7 +125,7 @@ func main(){
 	fmt.Println(ai.Abs())
 	
 	/*
-			2016-08-01		
+		2016-08-01		
 	*/
 	var w Writer
 	
@@ -143,7 +143,7 @@ func main(){
 	fmt.Println("Sqrt(",sqrt_param,") err : ",sqrt_err)
 	
 	/*
-			2016-08-02
+		2016-08-02
 	*/
 	//#57
 	//var h Hello
@@ -165,10 +165,54 @@ func main(){
 	io.Copy(os.Stdout, &r)
 	
 	/*
-			2016-08-05
+		2016-08-05
 	*/
 	//#63
 	go say("world")
 	say("Hello")
-
+	
+	/*
+		2016-08-08
+	*/
+	//#64
+	//	b := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
+	//	b[:2] == []byte{'g', 'o'}
+	//	b[2:] == []byte{'l', 'a', 'n', 'g'}
+	//	b[:] == b
+	slice_int := []int{7, 2, 8, -9, 4, 0}
+	channel_int := make(chan int)
+	
+	go sum(slice_int[:len(slice_int)/2], channel_int)
+	go sum(slice_int[len(slice_int)/2:], channel_int)
+	
+	sum_res1, sum_res2 := <- channel_int, <- channel_int
+	fmt.Println(sum_res1, sum_res2, sum_res1 + sum_res2)
+	
+	/*
+	go chanExam01()
+	<-channel
+	print(str)
+	*/
+	
+	chanBuffered()
+	//-----------------------------#66-----------------------------//
+	go fibonacciChan(cap(channel), channel)
+	for i := range channel {
+		fmt.Println(i)	
+	}
+	
+	//-----------------------------#67-----------------------------//
+	channel2 := make(chan int)
+	quit := make(chan int)
+	go func() {
+		for i := 0; i < 10; i++ {
+			fmt.Println(<- channel2)
+		}
+		quit <- 0
+	}()
+	fibonacciSelect(channel2, quit)
+	
+	//-----------------------------#68-----------------------------//
+	selectDefaultTest()
+	
 }

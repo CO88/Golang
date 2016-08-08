@@ -7,9 +7,13 @@ import (
 
 func say(s string) {
 	
+	//share
+	var j int = 0;
+	
 	for i := 0; i < 5; i++ {
 		time.Sleep(100 * time.Millisecond)
-		fmt.Println(s)
+		j++
+		fmt.Println(s,"  ",j)
 	}
 }
 
