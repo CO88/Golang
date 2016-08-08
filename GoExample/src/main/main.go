@@ -8,6 +8,7 @@ import (
 	"math/cmplx" 
 	"golang.org/x/tour/pic"
 	"golang.org/x/tour/wc"
+	"golang.org/x/tour/tree"
 	//"net/http"
 	"strings"
 )
@@ -214,5 +215,10 @@ func main(){
 	
 	//-----------------------------#68-----------------------------//
 	selectDefaultTest()
+	
+	//-----------------------------#70-----------------------------//
+	
+	
+	fmt.Println(Same(tree.New(1), tree.New(1)))
 	
 }
