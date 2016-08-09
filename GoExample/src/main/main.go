@@ -218,7 +218,13 @@ func main(){
 	
 	//-----------------------------#70-----------------------------//
 	
-	
 	fmt.Println(Same(tree.New(1), tree.New(1)))
+	fmt.Println(Same(tree.New(1), tree.New(2)))
 	
+	
+	//-----------------------------#71-----------------------------//
+	// 버퍼가 1개만 있는 채널을 만듦으로써 
+	// map에 공유데이터를 막는다.
+    ch := make(chan string, 1)
+    Crawl("http://golang.org/", 4, fetcher, ch)
 }

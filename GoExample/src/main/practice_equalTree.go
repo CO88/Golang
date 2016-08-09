@@ -3,21 +3,17 @@ package main
 import (
 	"golang.org/x/tour/tree"
 )
+func InOrder(t *tree.Tree, ch chan int) {
+	if t == nil { return }
+	
+	InOrder(t.Left, ch)
+	ch <- t.Value
+	InOrder(t.Right, ch)
+}
 
 func Walk(t *tree.Tree, ch chan int) {
-	 
-	 
-	var preOrder func(t *tree.Tree)
-	preOrder = func(t *tree.Tree) {
-		if t == nil {
-			return 
-		}
-		preOrder(t.Left)
-		ch <- t.Value
-		preOrder(t.Right)
-	}
 	
-	preOrder(t)
+	InOrder(t, ch)
 	close(ch)
 }
 
@@ -30,17 +26,15 @@ func Same(t1, t2 *tree.Tree) bool {
 	go Walk(t2, ch2)
 	
 	for {
-		i1, ok1 := <-ch1
-		i2, ok2 := <-ch2
+		val1, ok1 := <-ch1
+		val2, ok2 := <-ch2
 		
-		if i1 != i2 || ok1 != ok2 {
+		if val1 != val2 || ok1 != ok2 {
 			return false
 		}
 		if (ok1 == false) && (ok2 == false) {
 			break
 		}
 	}
-	
-	
 	return true
 }
