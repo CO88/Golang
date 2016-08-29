@@ -5,6 +5,9 @@ import (
 )
 
 func main() {
-	fmt.Println("ee")
-}
+	ExampleReadFrom_append()
+	ExampleNewIntGenerator()
+	
+	fmt.Println(Sqrt(25))
+}	
 
