@@ -14,7 +14,7 @@ func main() {
 	fmt.Println(Eval("1 - 2 * 3 + 4"))
 	fmt.Println(Eval("3 * ( 3 + 1 * 3 ) / 2"))
 	
-	hasDupeRune("아아아아")
+	fmt.Println(hasDupeRune("아아아아"))
 	
 }	
 

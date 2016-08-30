@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+
 )
 
 func hasDupeRune(s string) bool {
