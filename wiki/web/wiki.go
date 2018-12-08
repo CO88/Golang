@@ -12,7 +12,7 @@ import (
 type Page struct{
 	Title string
 	Body []byte
-	DisplayBody template.HTML
+	NewBody template.HTML
 }
 
 var templates = template.Must(template.ParseFiles("edit.html", "view.html","FrontPage.html"))
@@ -53,7 +53,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request, title string) {
 		[PageName] -> <a href="/view/PageName">PageName</a>
 	*/
 	escapeBody := []byte(template.HTMLEscapeString(string(p.Body)))
-	p.DisplayBody = template.HTML(pageNameRegexp.ReplaceAllFunc(escapeBody, func(s []byte) []byte {
+	p.NewBody = template.HTML(pageNameRegexp.ReplaceAllFunc(escapeBody, func(s []byte) []byte {
 			m := string(s[1 : len(s)-1])
 			return []byte("<a href=\"/view/"+ m + "\">" + m +"</a>")
 	}))
